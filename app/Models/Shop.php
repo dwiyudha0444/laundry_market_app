@@ -20,4 +20,9 @@ class Shop extends Model
         'price',
         'rate',
     ];
+
+    public function laundry()
+        {
+            return $this->hasMany(Laundry::class);
+        }
 }

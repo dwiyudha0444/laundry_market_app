@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laundry extends Model
 {
-    protected $table = 'laundrys';
+    protected $table = 'laundries';
     protected $fillable = [
         'claim_code',
         'user_id',
@@ -21,4 +21,14 @@ class Laundry extends Model
         'description',
         'status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class);
+    }
 }
